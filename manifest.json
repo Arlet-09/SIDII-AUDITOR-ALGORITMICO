@@ -1,0 +1,28 @@
+{
+  "id": "./",
+  "name": "UT-GEST | Gestión y Seguimiento Académico",
+  "short_name": "UT-GEST",
+  "description": "Plataforma PWA para gestión y seguimiento académico con soporte de caché y uso sin conexión.",
+  "lang": "es-MX",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#211b2a",
+  "background_color": "#0d0c10",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

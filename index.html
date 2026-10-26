@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UT-GEST: plataforma demostrativa para la gestión y seguimiento académico.">
+  <title>UT-GEST | Gestión y Seguimiento Académico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#211b2a">
+  <meta name="app-version" content="1.3.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <script src="./pwa.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#perfil" data-section="perfil" aria-label="UT-GEST, Gestión y Seguimiento Académico">
+        <span class="brand-mark" aria-hidden="true">UT</span>
+        <span class="brand-copy">
+          <strong>UT-GEST</strong>
+          <small>Gestión y Seguimiento Académico</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button class="nav-link active" data-section="perfil">Inicio</button>
+        <button class="nav-link" data-section="datos">Datos</button>
+        <button class="nav-link" data-section="evidencias">Evidencias</button>
+        <button class="nav-link" data-section="graficos">Indicadores</button>
+        <button class="nav-link" data-section="gestion">Gestión</button>
+      </nav>
+
+      <div class="topbar-actions">
+        <span class="period-label">Periodo 2026 · Mayo–Agosto</span>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">Sistema activo</span>
+        <button class="icon-btn" id="themeToggle" title="Cambiar modo de visualización" aria-label="Cambiar modo de visualización">◐</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="perfil" class="page-section active-section">
+        <div class="hero-panel">
+          <div>
+            <p class="eyebrow">PANEL ADMINISTRATIVO · UT-GEST</p>
+            <h1>Gestión y seguimiento académico</h1>
+            <p class="hero-text">Centraliza indicadores, evidencias y avances académicos desde una sola plataforma.</p>
+          </div>
+          <div class="profile-badge">
+            <div class="avatar">IA</div>
+            <div>
+              <strong>Idania Núñez Arroyo</strong>
+              <span>Rol: SUPER_ADMIN</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3 stats-row">
+          <article class="stat-card">
+            <span class="stat-label">Componentes registrados</span>
+            <strong class="stat-value">06</strong>
+            <span class="stat-meta positive">+2 este periodo</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Evidencias cargadas</span>
+            <strong class="stat-value">48</strong>
+            <span class="stat-meta positive">86% validadas</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Cumplimiento general</span>
+            <strong class="stat-value">78%</strong>
+            <span class="stat-meta">Periodo mayo–agosto</span>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">RESUMEN</p>
+                <h2>Información del usuario</h2>
+              </div>
+              <span class="tag">Administración</span>
+            </div>
+            <div class="info-list">
+              <div><span>Nombre</span><strong>Idania Núñez Arroyo</strong></div>
+              <div><span>Rol</span><strong>Super administrador</strong></div>
+              <div><span>Área</span><strong>Planeación y seguimiento</strong></div>
+              <div><span>Último acceso</span><strong>25 sep 2026 · 09:42</strong></div>
+            </div>
+          </article>
+
+          <article class="panel gradient-panel">
+            <p class="eyebrow">ACCIONES RÁPIDAS</p>
+            <h2>Panel administrativo</h2>
+            <div class="quick-actions">
+              <button class="action-btn" data-section="gestion">Gestionar usuarios</button>
+              <button class="action-btn" data-section="datos">Registrar dato</button>
+              <button class="action-btn" data-section="evidencias">Cargar evidencia</button>
+              <button class="action-btn" data-section="graficos">Consultar gráficos</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="datos" class="page-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MÓDULO 01</p>
+            <h1>Registro de indicadores</h1>
+            <p>Registra metas, indicadores y avances por componente y periodo.</p>
+          </div>
+          <span class="tag">Borrador</span>
+        </div>
+
+        <form id="dataForm" class="panel form-panel">
+          <div class="form-grid">
+            <label>Tipo de información
+              <select id="dataType">
+                <option>Componente</option>
+                <option>Propósito</option>
+                <option>Fin</option>
+                <option>Actividades</option>
+              </select>
+            </label>
+            <label>Componente
+              <select id="componentSelect">
+                <option>Componente 1</option>
+                <option>Componente 2</option>
+                <option>Componente 3</option>
+              </select>
+            </label>
+          </div>
+          <label>Resumen narrativo
+            <input id="narrative" type="text" placeholder="Ej. Personal académico capacitado en herramientas digitales" required>
+          </label>
+          <label>Indicador
+            <input id="indicator" type="text" placeholder="Ej. Porcentaje de docentes capacitados" required>
+          </label>
+
+          <div class="data-table-wrap">
+            <table class="data-table editable-table">
+              <thead><tr><th>Periodo</th><th>Programado</th><th>Realizado</th></tr></thead>
+              <tbody>
+                <tr><td>Enero - Abril</td><td><input type="number" value="100"></td><td><input type="number" value="92"></td></tr>
+                <tr><td>Mayo - Agosto</td><td><input type="number" value="120"></td><td><input type="number" value="106"></td></tr>
+                <tr><td>Septiembre - Diciembre</td><td><input type="number" value="140"></td><td><input type="number" value="0"></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="form-actions">
+            <button type="reset" class="secondary-btn">Limpiar</button>
+            <button type="submit" class="primary-btn">Guardar datos</button>
+          </div>
+          <p id="dataMessage" class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="evidencias" class="page-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MÓDULO 02</p>
+            <h1>Gestión de evidencias</h1>
+            <p>Registra documentos y recursos que respaldan los avances académicos.</p>
+          </div>
+          <span class="tag">12 pendientes</span>
+        </div>
+
+        <div class="content-grid two-thirds">
+          <form id="evidenceForm" class="panel form-panel">
+            <h2>Nueva evidencia</h2>
+            <label>Componente
+              <select id="evidenceComponent">
+                <option>Componente 1 · Capacitación</option>
+                <option>Componente 2 · Vinculación</option>
+                <option>Componente 3 · Seguimiento</option>
+              </select>
+            </label>
+            <label>Tipo de evidencia
+              <select id="evidenceType">
+                <option>Lista de asistencia</option>
+                <option>Reporte de actividades</option>
+                <option>Capturas de pantalla</option>
+                <option>Oficio / documento</option>
+              </select>
+            </label>
+            <label>Descripción
+              <textarea id="evidenceDescription" rows="5" placeholder="Describe brevemente qué acredita esta evidencia..."></textarea>
+            </label>
+            <label class="file-drop">
+              <span class="file-icon">↑</span>
+              <strong id="fileLabel">Seleccionar archivo</strong>
+              <small>PDF, XLSX, DOCX o imagen · máximo 10 MB</small>
+              <input id="evidenceFile" type="file" accept=".pdf,.xlsx,.docx,.png,.jpg,.jpeg">
+            </label>
+            <button class="primary-btn" type="submit">Registrar evidencia</button>
+            <p id="evidenceMessage" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <div class="panel">
+            <div class="panel-header"><h2>Últimas evidencias</h2><span class="tag success">Verificadas</span></div>
+            <div id="evidenceList" class="evidence-list">
+              <article class="evidence-item"><div class="file-type">PDF</div><div><strong>Reporte capacitación Q2</strong><span>Componente 1 · 19/08/2026</span></div><span class="badge success">Válida</span></article>
+              <article class="evidence-item"><div class="file-type">XLSX</div><div><strong>Matriz de seguimiento</strong><span>Componente 3 · 17/08/2026</span></div><span class="badge warning">Revisión</span></article>
+              <article class="evidence-item"><div class="file-type">DOCX</div><div><strong>Oficio de vinculación</strong><span>Componente 2 · 12/08/2026</span></div><span class="badge success">Válida</span></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="graficos" class="page-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MÓDULO 03</p>
+            <h1>Indicadores y avance</h1>
+            <p>Consulta el cumplimiento de metas mediante gráficos de seguimiento.</p>
+          </div>
+          <button id="printCharts" class="secondary-btn">Exportar / imprimir</button>
+        </div>
+
+        <div class="filter-bar panel">
+          <label>Periodo
+            <select id="periodFilter">
+              <option value="all">Todos</option>
+              <option value="q1">Enero - Abril</option>
+              <option value="q2">Mayo - Agosto</option>
+              <option value="q3">Septiembre - Diciembre</option>
+            </select>
+          </label>
+          <label>Componente
+            <select id="chartComponent">
+              <option value="all">Todos</option>
+              <option value="c1">Componente 1</option>
+              <option value="c2">Componente 2</option>
+              <option value="c3">Componente 3</option>
+            </select>
+          </label>
+          <div class="chart-summary"><strong id="completionValue">78%</strong><span>cumplimiento estimado</span></div>
+        </div>
+
+        <div class="charts-grid">
+          <article class="chart-card"><div class="chart-title"><h2>Fin</h2><span>Programado vs. realizado</span></div><div class="chart-box"><canvas id="finChart"></canvas></div></article>
+          <article class="chart-card"><div class="chart-title"><h2>Propósito</h2><span>Programado vs. realizado</span></div><div class="chart-box"><canvas id="purposeChart"></canvas></div></article>
+          <article class="chart-card"><div class="chart-title"><h2>Componentes</h2><span>Avance por componente</span></div><div class="chart-box"><canvas id="componentChart"></canvas></div></article>
+          <article class="chart-card"><div class="chart-title"><h2>Actividades</h2><span>Avance por periodo</span></div><div class="chart-box"><canvas id="activityChart"></canvas></div></article>
+        </div>
+      </section>
+
+      <section id="gestion" class="page-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MÓDULO 04</p>
+            <h1>Administración de registros</h1>
+            <p>Administra registros, periodos y acciones disponibles para cada elemento.</p>
+          </div>
+          <button id="addRow" class="primary-btn">+ Nuevo registro</button>
+        </div>
+
+        <div class="panel data-table-wrap">
+          <table id="managementTable" class="data-table management-table">
+            <thead><tr><th>Tipo</th><th>Subtipo</th><th>Resumen</th><th>Indicador</th><th>Periodos</th><th>Acciones</th></tr></thead>
+            <tbody>
+              <tr><td>Componente</td><td>Componente 1</td><td>Capacitación docente</td><td>% docentes capacitados</td><td><span class="mini-tag">3</span></td><td><button class="table-btn edit">Editar</button><button class="table-btn delete">Eliminar</button></td></tr>
+              <tr><td>Componente</td><td>Componente 2</td><td>Actividades de vinculación</td><td>No. de actividades</td><td><span class="mini-tag">3</span></td><td><button class="table-btn edit">Editar</button><button class="table-btn delete">Eliminar</button></td></tr>
+              <tr><td>Propósito</td><td>Resultado esperado</td><td>Mejora del seguimiento</td><td>% cumplimiento</td><td><span class="mini-tag">2</span></td><td><button class="table-btn edit">Editar</button><button class="table-btn delete">Eliminar</button></td></tr>
+              <tr><td>Actividad</td><td>Actividad 04</td><td>Validación de evidencias</td><td>% expedientes validados</td><td><span class="mini-tag">3</span></td><td><button class="table-btn edit">Editar</button><button class="table-btn delete">Eliminar</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+
+    </main>
+
+    <footer class="footer">
+      <div><strong>UT-GEST</strong><span>Gestión y Seguimiento Académico</span></div>
+      <div><span>© 2026 · Sistema demostrativo · Datos simulados</span><a href="#perfil" data-section="perfil">Volver arriba ↑</a></div>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
